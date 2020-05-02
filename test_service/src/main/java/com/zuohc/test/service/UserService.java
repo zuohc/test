@@ -17,4 +17,9 @@ public class UserService {
     public List<User> getUserList(){
         return userDao.getUserList();
     }
+
+    @Transactional(readOnly = true)
+    public User getUserById(Integer id) {
+        return userDao.getUserById(id);
+    }
 }
