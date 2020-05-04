@@ -22,4 +22,10 @@ public class UserService {
     public User getUserById(Integer id) {
         return userDao.getUserById(id);
     }
+
+    @Transactional
+    public Integer addUser(User user) {
+        userDao.addUser(user);
+        return user.getUserId();
+    }
 }

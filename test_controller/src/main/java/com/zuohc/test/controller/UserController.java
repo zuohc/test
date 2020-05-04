@@ -4,6 +4,7 @@ import com.zuohc.test.model.User;
 import com.zuohc.test.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,5 +24,10 @@ public class UserController {
     @RequestMapping("/{id}")
     private User getUserById(@PathVariable("id")Integer id) {
         return userService.getUserById(id);
+    }
+
+    @RequestMapping("/add")
+    private Integer addUser(User user){
+        return userService.addUser(user);
     }
 }
